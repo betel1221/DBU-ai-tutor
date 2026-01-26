@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-primary);
+}
+
+/* Force class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global Theme Variables */
+:root {
+  --color-primary: #9333ea;
+  /* Default Purple */
+}
+
+/* Theme Classes applied to HTML/Body */
+.theme-purple {
+  --color-primary: #9333ea;
+}
+
+.theme-blue {
+  --color-primary: #2563eb;
+}
+
+.theme-green {
+  --color-primary: #16a34a;
+}
+
+.theme-orange {
+  --color-primary: #ea580c;
+}
+
+.theme-red {
+  --color-primary: #dc2626;
+}
+
+/* --- CUSTOM ANIMATIONS --- */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px var(--color-primary), 0 0 30px var(--color-primary);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 30px var(--color-primary), 0 0 60px var(--color-primary);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite alternate;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+/* Scrollbar Polish */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}

@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+backend/__pycache__/
+*.pyc
+
+# Environment Secrets
+backend/.env
+.env
+
+# Build outputs
+my-project/dist/
+my-project/build/
+
+# Local/OS files
+.DS_Store
+Thumbs.db
+speech.mp3
