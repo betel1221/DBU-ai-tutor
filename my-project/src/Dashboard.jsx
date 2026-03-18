@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import logo from './logo.png';
 import Settings from './Settings';
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://dbu-ai-tutor.onrender.com";
 
 const Dashboard = ({ user, profile, setProfile, theme, setTheme, toggleTheme, colorTheme, setColorTheme }) => {
   // const logo = theme === 'dark' ? logoDark : logoLight; // Removed dynamic logo for now
@@ -117,7 +118,7 @@ const Dashboard = ({ user, profile, setProfile, theme, setTheme, toggleTheme, co
       formData.append("history", JSON.stringify(history));
       if (file) formData.append("file", file);
 
-      const res = await axios.post("http://127.0.0.1:5001/chat", formData);
+   const res = await axios.post(`${API_BASE_URL}/chat`, formData);
       const botReply = res.data.reply;
 
       // Save Bot Message
