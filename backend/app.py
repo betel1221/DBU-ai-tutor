@@ -170,4 +170,7 @@ def speak():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    # Get the port from Render's environment, or default to 8000
+    port = int(os.environ.get("PORT", 8000))
+    # host='0.0.0.0' is REQUIRED for cloud deployment
+    app.run(host='0.0.0.0', port=port)
