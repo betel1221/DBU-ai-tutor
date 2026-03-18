@@ -3,7 +3,7 @@ import { db } from './firebase';
 import { doc, setDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { auth } from './firebase';
-import logo from './logo.png';
+import logo from './d-logo.svg';
 
 const Onboarding = ({ user, profile, onComplete, colorTheme }) => {
   const [dept, setDept] = useState('');

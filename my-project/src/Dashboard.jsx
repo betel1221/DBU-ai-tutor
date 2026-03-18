@@ -7,7 +7,7 @@ import {
 } from "firebase/firestore";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import logo from './logo.png';
+import logo from './d-logo.svg';
 import Settings from './Settings';
 const API_BASE_URL = import.meta.env.VITE_API_URL || "https://dbu-ai-tutor.onrender.com";
 
